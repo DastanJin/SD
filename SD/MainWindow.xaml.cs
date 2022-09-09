@@ -24,23 +24,31 @@ namespace SD
     public MainWindow()
     {
       InitializeComponent();
+      this.ResizeMode = ResizeMode.NoResize;
     }
     public static void Shutdown(int hours)
     {
-      string arguments = $"/s /t {hours * 3600}";
-      var process = new ProcessStartInfo("shutdown", arguments);
+      ProcessStartInfo process = new("shutdown", $"/s /t {hours * 3600}")
+      {
+        WindowStyle = ProcessWindowStyle.Hidden,
+        CreateNoWindow = true
+      };
       Process.Start(process);
     }
     public static void CancelShutdown()
     {
-      string arguments = $"-a";
-      var process = new ProcessStartInfo("shutdown", arguments);
+      ProcessStartInfo process = new("shutdown", "-a")
+      {
+        WindowStyle = ProcessWindowStyle.Hidden,
+        CreateNoWindow = true
+      };
       Process.Start(process);
     }
 
     private void Plus_Click(object sender, RoutedEventArgs e)
     {
       if (GetHoursValue() >= 24) return;
+
       Hours.Content = $"{GetHoursValue() + 1} h";
     }
 
