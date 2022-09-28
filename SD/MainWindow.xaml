@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:SD"
         mc:Ignorable="d"
         Title="ShutDown App" Height="450" Width="800">
-    <Grid Background="#FF141414" MinHeight="450" MaxHeight="450" MinWidth="800" MaxWidth="800">
-        <Button x:Name="ShutdownBtn" Content="VYPNOUT" HorizontalAlignment="Right" Margin="0,304,400,0" Width="400" Click="Shutdown_Click" FontSize="24" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FFD2D2D2" Height="136" VerticalAlignment="Top" Foreground="Gainsboro"/>
-        <Button x:Name="CancelBtn" Content="ZRUŠIT VYPNUTÍ" Margin="400,304,0,0" Click="Cancel_Click" FontSize="24" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FFD2D2D2" Height="136" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400" Foreground="Gainsboro"/>
-        <Label x:Name="Hours" Content="1 h" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" FontSize="72" Foreground="Gainsboro"/>
-        <Button x:Name="Plus" Content="+" HorizontalAlignment="Left" Margin="595,85,0,0" VerticalAlignment="Top" Height="100" Width="100" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="Plus_Click" Foreground="#FF960000"/>
-        <Button x:Name="Minus" Content="-" HorizontalAlignment="Left" Margin="105,85,0,0" VerticalAlignment="Top" Height="100" Width="100" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="Minus_Click" Foreground="#FF960000"/>
-        <CheckBox x:Name="Close" Content="Vypnout po zadání" HorizontalAlignment="Left" Margin="614,10,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="Gainsboro"/>
+  <Grid Background="#FF141414" MinHeight="450" MaxHeight="450" MinWidth="800" MaxWidth="800">
+    <Button x:Name="ShutdownBtn" Content="VYPNOUT" HorizontalAlignment="Right" Margin="0,304,400,0" Width="400" Click="Shutdown_Click" FontSize="24" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FF460000" Height="136" VerticalAlignment="Top" Foreground="Gainsboro"/>
+    <Button x:Name="CancelBtn" Content="ZRUŠIT VYPNUTÍ" Margin="400,304,0,0" Click="Cancel_Click" FontSize="24" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FF460000" Height="136" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400" Foreground="Gainsboro"/>
+    <Label x:Name="Hours" Content="1 h" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" FontSize="72" Foreground="Gainsboro"/>
+    <Button x:Name="Plus" Content="+" HorizontalAlignment="Left" Margin="595,85,0,0" VerticalAlignment="Top" Height="100" Width="100" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="Plus_Click" Foreground="#FF960000"/>
+    <Button x:Name="Minus" Content="-" HorizontalAlignment="Left" Margin="105,85,0,0" VerticalAlignment="Top" Height="100" Width="100" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="Minus_Click" Foreground="#FF960000"/>
+    <CheckBox x:Name="Close" Content="Vypnout po zadání" HorizontalAlignment="Left" Margin="614,10,0,0" VerticalAlignment="Top" Foreground="Gainsboro" Click="Close_Click"/>
 
-    </Grid>
+  </Grid>
 </Window>

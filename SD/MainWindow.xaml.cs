@@ -25,8 +25,9 @@ namespace SD
     {
       InitializeComponent();
       this.ResizeMode = ResizeMode.NoResize;
+      Close.IsChecked = Properties.Settings.Default.CloseCheckBox;
     }
-    public static void Shutdown(int hours)
+    public void Shutdown(int hours)
     {
       ProcessStartInfo process = new("shutdown", $"/s /t {hours * 3600}")
       {
@@ -34,8 +35,9 @@ namespace SD
         CreateNoWindow = true
       };
       Process.Start(process);
+      if (Close.IsChecked == true) Close();
     }
-    public static void CancelShutdown()
+    public void CancelShutdown()
     {
       ProcessStartInfo process = new("shutdown", "-a")
       {
@@ -43,6 +45,7 @@ namespace SD
         CreateNoWindow = true
       };
       Process.Start(process);
+      if (Close.IsChecked == true) Close();
     }
 
     private void Plus_Click(object sender, RoutedEventArgs e)
@@ -68,7 +71,11 @@ namespace SD
     {
       int h = GetHoursValue();
       Shutdown(h);
-      if (Close.IsChecked == true) Close();
+    }
+
+    private void Close_Click(object sender, RoutedEventArgs e) {
+      Properties.Settings.Default.CloseCheckBox = (bool)Close.IsChecked;
+      Properties.Settings.Default.Save();
     }
   }
 }
