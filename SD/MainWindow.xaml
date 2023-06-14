@@ -1,18 +1,75 @@
-﻿<Window x:Class="SD.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SD"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="SD.MainWindow"
         mc:Ignorable="d"
         Title="ShutDown App" Height="450" Width="800">
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Window.Resources>
   <Grid Background="#FF141414" MinHeight="450" MaxHeight="450" MinWidth="800" MaxWidth="800">
-    <Button x:Name="ShutdownBtn" Content="VYPNOUT" HorizontalAlignment="Right" Margin="0,304,400,0" Width="400" Click="Shutdown_Click" FontSize="24" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FF460000" Height="136" VerticalAlignment="Top" Foreground="Gainsboro"/>
-    <Button x:Name="CancelBtn" Content="ZRUŠIT VYPNUTÍ" Margin="400,304,0,0" Click="Cancel_Click" FontSize="24" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FF460000" Height="136" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400" Foreground="Gainsboro"/>
+    <Button x:Name="ShutdownBtn" 
+        Content="VYPNOUT" 
+        HorizontalAlignment="Right" 
+        Margin="0,304,400,0" 
+        Width="400" 
+        Click="Shutdown_Click" 
+        FontSize="24" 
+        FontWeight="Bold"         
+        Background="#FF141414" 
+        BorderBrush="#FF141414" 
+        MouseEnter="Button_MouseEnter" 
+        MouseLeave="Button_MouseLeave"  
+        Height="136" 
+        VerticalAlignment="Top" 
+        Foreground="Gainsboro"/>
+    <Button x:Name="CancelBtn" 
+        Content="ZRUŠIT VYPNUTÍ" 
+        Margin="400,304,0,0" 
+        Click="Cancel_Click" 
+        FontSize="24" 
+        FontWeight="Bold"         
+        Background="#FF141414" 
+        BorderBrush="#FF141414" 
+        MouseEnter="Button_MouseEnter" 
+        MouseLeave="Button_MouseLeave"  
+        Height="136" VerticalAlignment="Top" 
+        HorizontalAlignment="Left" 
+        Width="400" 
+        Foreground="Gainsboro"/>
     <Label x:Name="Hours" Content="1 h" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" FontSize="72" Foreground="Gainsboro"/>
-    <Button x:Name="Plus" Content="+" HorizontalAlignment="Left" Margin="595,85,0,0" VerticalAlignment="Top" Height="100" Width="100" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="Plus_Click" Foreground="#FF960000"/>
-    <Button x:Name="Minus" Content="-" HorizontalAlignment="Left" Margin="105,85,0,0" VerticalAlignment="Top" Height="100" Width="100" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="Minus_Click" Foreground="#FF960000"/>
-    <CheckBox x:Name="Close" Content="Vypnout po zadání" HorizontalAlignment="Left" Margin="614,10,0,0" VerticalAlignment="Top" Foreground="Gainsboro" Click="Close_Click"/>
+    <Button x:Name="Plus" Content="+" 
+        HorizontalAlignment="Left" 
+        Margin="595,85,0,0" 
+        VerticalAlignment="Top" 
+        Height="100" Width="100" 
+        FontSize="72" 
+        Background="#FF141414" 
+        BorderBrush="#FF141414" 
+        MouseEnter="Button_MouseEnter" 
+        MouseLeave="Button_MouseLeave" 
+        Click="Plus_Click" 
+        Foreground="#FF960000"/>
+    <Button x:Name="Minus" Content="-" 
+        HorizontalAlignment="Left" 
+        Margin="105,85,0,0" 
+        VerticalAlignment="Top" 
+        Height="100" Width="100" 
+        FontSize="72"         
+        Background="#FF141414" 
+        BorderBrush="#FF141414" 
+        MouseEnter="Button_MouseEnter" 
+        MouseLeave="Button_MouseLeave"  
+        Click="Minus_Click" 
+        Foreground="#FF960000"/>
+    <CheckBox x:Name="CloseBtn" Content="Vypnout po zadání" HorizontalAlignment="Left" Margin="614,10,0,0" VerticalAlignment="Top" Foreground="Gainsboro" Style="{x:Null}" Click="Close_Click" Visibility="Visible"/>
 
   </Grid>
 </Window>
